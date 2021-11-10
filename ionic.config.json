@@ -1,0 +1,7 @@
+{
+  "name": "InmoLucero",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

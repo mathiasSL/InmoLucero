@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LOGIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="loginData.usuario"  ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="text" [(ngModel)]="loginData.clave" ></ion-input>
+  </ion-item>
+
+  <ion-button class="ion-margin-top" expand="block" color="primary" (click)="entrar()">
+    LOGIN
+  </ion-button>
+
+</ion-content>
