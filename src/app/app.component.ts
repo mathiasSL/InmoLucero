@@ -10,5 +10,7 @@ import { MenuController } from '@ionic/angular';
 export class AppComponent {
   constructor(private menu: MenuController) {}
 
-  
+  toggleMenu() {
+    this.menu.toggle(); //Add this method to your button click function
+  }
 }

@@ -1,15 +1,15 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Inmobiliaria</ion-title>
+  <ion-menu side="start" menuId="first" contentId="main" > 
+    <ion-header >
+      <ion-toolbar color="danger">
+        <ion-title >Inmobiliaria</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item routerLink="/mapa">Ubicacion</ion-item>
-        <ion-item routerLink="/perfil">Perfil</ion-item>
-        <ion-item routerLink="/inmuebles">Inmuebles</ion-item>
+        <ion-item (click)="toggleMenu()" routerLink="/mapa">Ubicacion</ion-item>
+        <ion-item (click)="toggleMenu()" routerLink="/perfil">Perfil</ion-item>
+        <ion-item (click)="toggleMenu()" routerLink="/inmuebles">Inmuebles</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>

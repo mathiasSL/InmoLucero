@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { InmuebleResponse } from '../interfaces/InmuebleResponse';
+import { PropietarioResponse } from '../interfaces/PropietarioResponse';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InmueblesService {
+export class PropietarioService {
 
   constructor(private httpCliente: HttpClient, private navCtrl: NavController) { }
 
-  private inmuebleResponse: InmuebleResponse={};
+  private propietarioResponse: PropietarioResponse={};
 
-  public getInmuebles(token: string)
+  public getPropietario(token: string)
   {
     const headers = {
       contentType: 'application/json',
@@ -20,7 +20,7 @@ export class InmueblesService {
     };
 
     return new Promise((resolve, reject) => 
-    this.httpCliente.get<InmuebleResponse>('http://practicastuds.ulp.edu.ar/api/Inmuebles/0', { headers }
+    this.httpCliente.get<PropietarioResponse>('http://practicastuds.ulp.edu.ar/api/Propietarios', { headers }
     ).subscribe(res => 
       {resolve(res);
     }, err => reject(err)));

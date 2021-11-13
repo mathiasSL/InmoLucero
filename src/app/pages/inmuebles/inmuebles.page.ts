@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InmueblesService } from '../../services/inmuebles.service';
 import { Storage } from '@ionic/storage-angular';
+import { InmuebleResponse } from '../../interfaces/InmuebleResponse';
 
 @Component({
   selector: 'app-inmuebles',
@@ -18,25 +19,33 @@ export class InmueblesPage implements OnInit {
     grupoId: ''
 }
 
+inmueble: Array<InmuebleResponse>;
 
   constructor(private inmuebleSvc: InmueblesService, private almacenar: Storage) { }
 
   async ngOnInit() {
     await this.almacenar.create();
+    this.getInmuebless();
   }
 
-  async getAllInmuebles(){
+  async getInmuebless() {
 
     const token = await this.almacenar.get('Token');
-
-    console.log('Token almacenado: ', token);
     
-    const getInmueblesAll = await this.inmuebleSvc.getInmuebles(token).catch(err => {
-     
+    const listaInmuebles: any = await this.inmuebleSvc.getInmuebles(token).catch(err => {
       return null;
-    });  
-    
-    console.log('Inmuebles: ', getInmueblesAll);
+    });
 
+            this.inmueble = [];
+
+            listaInmuebles.forEach( ( x ) => {
+
+                this.inmueble.push( x );
+            } );
   }
+
+  
+
+
+
 }

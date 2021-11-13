@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
 
   async ngOnInit() {
     await this.almacenar.create();
+    this.loginData.usuario = "mathiaslucero19@gmail.com";
   }
 
   async entrar(){

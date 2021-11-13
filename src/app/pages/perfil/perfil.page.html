@@ -3,5 +3,30 @@
 </app-header>
 
 <ion-content>
+    <ion-card *ngFor="let p of propietario" color="danger">
+        <ion-card-header>
+            <ion-card-title>Datos Propietario</ion-card-title>
+          </ion-card-header>
 
+        <ion-list>
+            <ion-item>
+                <ion-label>Nombre: {{p.nombre}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Email: {{p.email}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Telefono: {{p.telefono}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>ID: {{p.id}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Grupo ID: {{p.grupoId}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-button fill="outline" slot="end" color="primary">EDITAR</ion-button>
+            </ion-item>
+        </ion-list>
+    </ion-card>
 </ion-content>
