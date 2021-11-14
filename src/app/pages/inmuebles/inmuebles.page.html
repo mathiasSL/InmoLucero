@@ -13,27 +13,36 @@
     <ion-list>
       <ion-item>
         <ion-icon name="map" slot="start"></ion-icon>
-        <ion-label>Direccion: {{i.direccion}}</ion-label>
+        <ion-label position="stacked">DIRECCION</ion-label>
+        <ion-input readonly>{{i.direccion}}</ion-input>
       </ion-item>
+
       <ion-item>
         <ion-icon name="code" slot="start"></ion-icon>
-        <ion-label>Superficie: {{i.superficie}}</ion-label>
+        <ion-label position="stacked">SUPERFICIE</ion-label>
+        <ion-input readonly>{{i.superficie}}</ion-input>
       </ion-item>
+
       <ion-item>
         <ion-icon name="location" slot="start"></ion-icon>
-        <ion-label>Latitud: {{i.latitud}}</ion-label>
+        <ion-label position="stacked">LATITUD</ion-label>
+        <ion-input readonly>{{i.latitud}}</ion-input>
       </ion-item>
+
       <ion-item>
         <ion-icon name="location" slot="start"></ion-icon>
-        <ion-label>Longitud: {{i.longitud}}</ion-label>
+        <ion-label position="stacked">LONGITUD</ion-label>
+        <ion-input readonly>{{i.longitud}}</ion-input>
       </ion-item>
+
       <ion-item>
-        <ion-button fill="outline" slot="end" color="danger">Ver Mapa</ion-button>
+        <ion-button fill="outline" slot="end" color="primary">EDITAR</ion-button>
+        <ion-button fill="outline" slot="end" color="danger">VER MAPA</ion-button>
       </ion-item>
-      
+
     </ion-list>
 
-    
+
 
   </ion-card>
 </ion-content>
