@@ -2,21 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PropietarioResponse } from '../interfaces/PropietarioResponse';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropietarioService {
 
-  constructor(private httpCliente: HttpClient, private navCtrl: NavController) { }
+  constructor(private httpCliente: HttpClient, private navCtrl: NavController, private loginSvc: LoginService) { }
 
   private propietarioResponse: PropietarioResponse={};
 
-  public getPropietario(token: string)
+  public async getPropietario(token: string)
   {
     const headers = {
       contentType: 'application/json',
-      authorization: 'Bearer '+token
+      authorization: `Bearer ${await this.loginSvc.getToken()}`
     };
 
     return new Promise((resolve, reject) => 

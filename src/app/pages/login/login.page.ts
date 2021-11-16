@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
-import { Storage } from '@ionic/storage-angular';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +13,9 @@ export class LoginPage implements OnInit {
       clave: ''
   }
 
-  constructor(private loginSvc: LoginService, private almacenar: Storage) { }
+  constructor(private loginSvc: LoginService) { }
 
-  async ngOnInit() {
-    await this.almacenar.create();
+   ngOnInit() {
     this.loginData.usuario = "mathiaslucero19@gmail.com";
   }
 
@@ -32,10 +30,10 @@ export class LoginPage implements OnInit {
     }
 
     console.log('Token: ', token);
-    const perfil = await this.loginSvc.getPerfil(token).catch(err => {
-      console.log('Error: ', err);
-    });
-    console.log('Perfil: ', perfil);
+    //const perfil = await this.loginSvc.getPerfil(token).catch(err => {
+     // console.log('Error: ', err);
+    //});
+    //console.log('Perfil: ', perfil);
   }
 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InmueblesService } from '../../services/inmuebles.service';
-import { Storage } from '@ionic/storage-angular';
 import { InmuebleResponse } from '../../interfaces/InmuebleResponse';
+import { StorageService } from '../../services/storage.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-inmuebles',
@@ -21,18 +22,15 @@ export class InmueblesPage implements OnInit {
 
 inmueble: Array<InmuebleResponse>;
 
-  constructor(private inmuebleSvc: InmueblesService, private almacenar: Storage) { }
+  constructor(private inmuebleSvc: InmueblesService, private loginSvc: LoginService) { }
 
-  async ngOnInit() {
-    await this.almacenar.create();
+  ngOnInit() {
     this.getInmuebless();
   }
 
   async getInmuebless() {
-
-    const token = await this.almacenar.get('Token');
     
-    const listaInmuebles: any = await this.inmuebleSvc.getInmuebles(token).catch(err => {
+    const listaInmuebles: any = await this.inmuebleSvc.getInmuebles(await this.loginSvc.getToken()).catch(err => {
       return null;
     });
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PropietarioService } from '../../services/propietario.service';
 import { PropietarioResponse } from '../../interfaces/PropietarioResponse';
-import { Storage } from '@ionic/storage-angular';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-perfil',
@@ -12,18 +12,15 @@ export class PerfilPage implements OnInit {
 
   propietario: any;
 
-  constructor(private propietarioSvc: PropietarioService, private almacenar: Storage) { }
+  constructor(private propietarioSvc: PropietarioService, private loginSvc: LoginService) { }
 
-  async ngOnInit() {
-    await this.almacenar.create();
+  ngOnInit() {
     this.getProp();
   }
 
   async getProp() {
 
-    const token = await this.almacenar.get('Token');
-
-    const rsp: any = await this.propietarioSvc.getPropietario(token).catch(err => {
+    const rsp: any = await this.propietarioSvc.getPropietario(await this.loginSvc.getToken()).catch(err => {
       return null;
     });
 
