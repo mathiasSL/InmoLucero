@@ -3,12 +3,9 @@
 </app-header>
 
 
-<ion-content fullscreen>
+<ion-content>
   <ion-card *ngFor="let i of inmueble" color="danger">
     <img src="./assets/imagenes/casa1.jpg" />
-    <ion-card-header>
-      <ion-card-title>Propiedad</ion-card-title>
-    </ion-card-header>
 
     <ion-list>
       <ion-item>
@@ -36,13 +33,16 @@
       </ion-item>
 
       <ion-item>
-        <ion-button fill="outline" slot="end" color="primary">EDITAR</ion-button>
-        <ion-button fill="outline" slot="end" color="danger">VER MAPA</ion-button>
+        <ion-button fill="outline" slot="start" color="primary">EDITAR</ion-button>
       </ion-item>
 
     </ion-list>
 
-
-
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" routerLink="/inmueble-post">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

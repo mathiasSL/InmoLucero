@@ -1,0 +1,45 @@
+<app-header titulo="Agregar Inmueble">
+
+</app-header>
+
+<ion-content>
+  <ion-card>
+
+      <ion-item>
+        <ion-label position="stacked">DIRECCION</ion-label>
+        <ion-input [(ngModel)]="inmuebleData.direccion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">SUPERFICIE</ion-label>
+        <ion-input type="number" [(ngModel)]="inmuebleData.superficie"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">LATITUD</ion-label>
+        <ion-input [(ngModel)]="inmuebleData.latitud"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">LONGITUD</ion-label>
+        <ion-input [(ngModel)]="inmuebleData.longitud"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">PROPIETARIO ID</ion-label>
+        <ion-input [(ngModel)]="inmuebleData.propietarioId"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">GRUPO ID</ion-label>
+        <ion-input [(ngModel)]="inmuebleData.grupoId"></ion-input>
+      </ion-item>
+      
+        <ion-button class="ion-margin-top" color="primary" expand="block" (click)="saveInmueble()">GUARDAR</ion-button>
+     
+
+
+
+  </ion-card>
+
+</ion-content>

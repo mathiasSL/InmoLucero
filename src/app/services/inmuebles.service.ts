@@ -11,19 +11,35 @@ export class InmueblesService {
 
   constructor(private httpCliente: HttpClient, private navCtrl: NavController, private loginSvc: LoginService) { }
 
-  private inmuebleResponse: InmuebleResponse={};
+  private inmuebleResponse: InmuebleResponse = {};
 
-  public async getInmuebles(token: string)
-  {
+  public async getInmuebles(token: string) {
     const headers = {
       contentType: 'application/json',
       authorization: `Bearer ${await this.loginSvc.getToken()}`
     };
 
-    return new Promise((resolve, reject) => 
-    this.httpCliente.get<InmuebleResponse>('http://practicastuds.ulp.edu.ar/api/Inmuebles/0', { headers }
-    ).subscribe(res => 
-      {resolve(res);
-    }, err => reject(err)));
+    return new Promise((resolve, reject) =>
+      this.httpCliente.get<InmuebleResponse>('http://practicastuds.ulp.edu.ar/api/Inmuebles/0', { headers }
+      ).subscribe(res => {
+        resolve(res);
+      }, err => reject(err)));
   }
+
+
+
+  public async postInmueble(token: string, post: InmuebleResponse) {
+    const headers = {
+      contentType: 'application/json',
+      authorization: `Bearer ${await this.loginSvc.getToken()}`
+    };
+
+    return new Promise((resolve, reject) =>
+      this.httpCliente.post('http://practicastuds.ulp.edu.ar/api/Inmuebles',
+        post, { headers, responseType: 'text' }
+      ).subscribe(res => {
+        resolve(res);
+      }, err => reject(err)));
+  }
+
 }

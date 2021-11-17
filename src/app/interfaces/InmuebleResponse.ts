@@ -1,8 +1,8 @@
     export interface InmuebleResponse{
         direccion?: string;
-        superficie?: string;
-        latitud?: string;
-        longitud?: string;
+        superficie?: number;
+        latitud?: number;
+        longitud?: number;
         propietarioId?: number;
         grupoId?: number;
     }
