@@ -3,29 +3,35 @@
 </app-header>
 
 <ion-content>
-    <ion-card *ngFor="let p of propietario" color="danger">
+    <ion-card color="danger">
         <ion-card-header>
             <ion-card-title>Datos Propietario</ion-card-title>
           </ion-card-header>
 
         <ion-list>
             <ion-item>
-                <ion-label>Nombre: {{p.nombre}}</ion-label>
+                <ion-label position="floating">Nombre:</ion-label>
+                <ion-input #nombre type="text" id="input" [(ngModel)]="propietarioData.nombre" readonly> </ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>Email: {{p.email}}</ion-label>
+                <ion-label position="floating">Email:</ion-label>
+                <ion-input type="email" [(ngModel)]="propietarioData.email" readonly></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>Telefono: {{p.telefono}}</ion-label>
+                <ion-label position="floating">Telefono:</ion-label>
+                <ion-input #telefono type="text" id="input" [(ngModel)]="propietarioData.telefono" readonly></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>ID: {{p.id}}</ion-label>
+                <ion-label position="floating">ID:</ion-label>
+                <ion-input type="number"  [(ngModel)]="propietarioData.id" readonly></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>Grupo ID: {{p.grupoId}}</ion-label>
+                <ion-label position="floating">Grupo ID:</ion-label>
+                <ion-input type="number" [(ngModel)]="propietarioData.grupoId" readonly></ion-input>
             </ion-item>
             <ion-item>
-                <ion-button fill="outline" slot="end" color="primary">EDITAR</ion-button>
+                <ion-button #guardar fill="solid" slot="start" color="primary" (click)="putProp()" disabled="true">GUARDAR</ion-button>
+                <ion-button #editar fill="outline" slot="end" color="danger" (click)="edit()">EDITAR</ion-button>
             </ion-item>
         </ion-list>
     </ion-card>
