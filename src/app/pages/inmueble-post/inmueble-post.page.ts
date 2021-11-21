@@ -11,9 +11,9 @@ export class InmueblePostPage implements OnInit {
   
   public inmuebleData = {
     direccion: '',
-    superficie: 0,
-    latitud: 0,
-    longitud: 0,
+    superficie: null,
+    latitud: null,
+    longitud: null,
     propietarioId: 5,
     grupoId: 5
   }
@@ -25,7 +25,7 @@ export class InmueblePostPage implements OnInit {
 
   async saveInmueble() {
 
-    const token = await this.inmuebleSvc.postInmueble(await this.loginSvc.getToken(), this.inmuebleData).catch(err => {
+    const token = await this.inmuebleSvc.postInmueble(this.inmuebleData).catch(err => {
       console.log('Error: ', err);
       return null;
     });

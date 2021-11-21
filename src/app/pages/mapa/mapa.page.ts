@@ -49,7 +49,7 @@ const popupOffsets = {
 };
 const popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
     .setLngLat([-66.334396,-33.303064])
-    .setHTML("<h1>Karttem!</h1>")
+    .setHTML("<h1>Inmobiliaria!</h1>")
     .setMaxWidth("300px")
     .addTo(map);
   

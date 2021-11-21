@@ -1,4 +1,5 @@
     export interface InmuebleResponse{
+        id?: number;
         direccion?: string;
         superficie?: number;
         latitud?: number;

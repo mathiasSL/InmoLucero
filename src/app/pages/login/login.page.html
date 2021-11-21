@@ -1,23 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>LOGIN</ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
-
+  <div style="display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1cm;" ><img src="./assets/imagenes/bienes-raices.png" style="align-content: center;"/></div>
+  
+<ion-list style="border-radius: 10px;">
   <ion-item>
-    <ion-label position="floating">Email</ion-label>
+    <ion-label position="floating" color="danger">Email</ion-label>
     <ion-input type="text" [(ngModel)]="loginData.usuario"  ></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="text" [(ngModel)]="loginData.clave" ></ion-input>
+  <ion-item class="closed">
+    <ion-label position="floating" color="danger">Contraseña</ion-label>
+    <ion-input color="primary" type="text" [(ngModel)]="loginData.clave" ></ion-input>
   </ion-item>
 
-  <ion-button class="ion-margin-top" expand="block" color="danger" (click)="entrar()">
-    LOGIN
-  </ion-button>
+  <ion-button class="bordes-redondos" expand="block" size="default" color="danger" (click)="entrar()">LOGIN</ion-button>
+
+</ion-list>
+
 
 </ion-content>

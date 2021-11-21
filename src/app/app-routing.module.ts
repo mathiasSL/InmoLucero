@@ -31,6 +31,15 @@ const routes: Routes = [
     path: 'inmueble-post',
     loadChildren: () => import('./pages/inmueble-post/inmueble-post.module').then( m => m.InmueblePostPageModule)
   },
+  {
+    path: 'inmueble-get',
+    loadChildren: () => import('./pages/inmueble-get/inmueble-get.module').then( m => m.InmuebleGetPageModule)
+  },
+  {
+    path: 'inmueble-get/:id',
+    loadChildren: () => import('./pages/inmueble-get/inmueble-get.module').then( m => m.InmuebleGetPageModule)
+  },
+
 ];
 
 @NgModule({

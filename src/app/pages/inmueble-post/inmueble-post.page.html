@@ -3,7 +3,10 @@
 </app-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card  style="border-radius: 15px;"> 
+    <ion-card-header color="danger">
+      <ion-card-title>Datos de Inmueble</ion-card-title>
+  </ion-card-header>
 
       <ion-item>
         <ion-label position="stacked">DIRECCION</ion-label>
@@ -17,25 +20,19 @@
 
       <ion-item>
         <ion-label position="stacked">LATITUD</ion-label>
-        <ion-input [(ngModel)]="inmuebleData.latitud"></ion-input>
+        <ion-input type="number" [(ngModel)]="inmuebleData.latitud"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">LONGITUD</ion-label>
-        <ion-input [(ngModel)]="inmuebleData.longitud"></ion-input>
+        <ion-input type="number" [(ngModel)]="inmuebleData.longitud"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">PROPIETARIO ID</ion-label>
-        <ion-input [(ngModel)]="inmuebleData.propietarioId"></ion-input>
-      </ion-item>
+        <ion-input type="hidden" [(ngModel)]="inmuebleData.propietarioId" disabled="true"></ion-input>
 
-      <ion-item>
-        <ion-label position="stacked">GRUPO ID</ion-label>
-        <ion-input [(ngModel)]="inmuebleData.grupoId"></ion-input>
-      </ion-item>
+        <ion-input type="hidden" [(ngModel)]="inmuebleData.grupoId" disabled="true"></ion-input>
       
-        <ion-button class="ion-margin-top" color="primary" expand="block" (click)="saveInmueble()">GUARDAR</ion-button>
+        <ion-button class="bordes-redondos" color="primary"  (click)="saveInmueble()"><ion-icon name="save" slot="start"></ion-icon>GUARDAR</ion-button>
 
   </ion-card>
 

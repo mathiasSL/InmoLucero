@@ -3,10 +3,10 @@
 </app-header>
 
 <ion-content>
-    <ion-card color="danger">
+    <ion-card color="danger" style="border-radius: 15px;">
         <ion-card-header>
-            <ion-card-title>Datos Propietario</ion-card-title>
-          </ion-card-header>
+            <ion-card-title>{{titulo}}</ion-card-title>
+        </ion-card-header>
 
         <ion-list>
             <ion-item>
@@ -15,7 +15,7 @@
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Email:</ion-label>
-                <ion-input type="email" [(ngModel)]="propietarioData.email" readonly></ion-input>
+                <ion-input type="email" [(ngModel)]="propietarioData.email" disabled="true"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Telefono:</ion-label>
@@ -23,15 +23,15 @@
             </ion-item>
             <ion-item>
                 <ion-label position="floating">ID:</ion-label>
-                <ion-input type="number"  [(ngModel)]="propietarioData.id" readonly></ion-input>
+                <ion-input type="number"  [(ngModel)]="propietarioData.id" disabled="true"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Grupo ID:</ion-label>
-                <ion-input type="number" [(ngModel)]="propietarioData.grupoId" readonly></ion-input>
+                <ion-input type="number" [(ngModel)]="propietarioData.grupoId" disabled="true"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-button #guardar fill="solid" slot="start" color="primary" (click)="putProp()" disabled="true">GUARDAR</ion-button>
-                <ion-button #editar fill="outline" slot="end" color="danger" (click)="edit()">EDITAR</ion-button>
+                <ion-button #guardar size="default" fill="solid" slot="start" color="tertiary" (click)="alertConfirm()" disabled="true"><ion-icon name="save"></ion-icon></ion-button>
+                <ion-button #editar size="default" fill="solid" slot="end" color="primary" (click)="edit()"><ion-icon name="pencil"></ion-icon></ion-button>
             </ion-item>
         </ion-list>
     </ion-card>
